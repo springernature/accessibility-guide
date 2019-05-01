@@ -2,9 +2,15 @@ team: frontenddevs
 pipeline: accessibility-guidelines
 slack_channel: "#frontend-alerts"
 
+tasks:
 - type: deploy-cf
   name: deploy to dev
   api: ((cloudfoundry.api-dev))
   space: dev
   manifest: manifest-dev.yml
-  deploy_artifact: .
+
+- type: deploy-cf
+  name: deploy to live
+  api: ((cloudfoundry.api-live))
+  space: live
+  manifest: manifest-live.yml
