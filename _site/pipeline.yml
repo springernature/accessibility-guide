@@ -1,0 +1,134 @@
+# Generated using halfpipe cli version 3.0.1
+groups: []
+resources:
+- name: git
+  type: git
+  source:
+    branch: master
+    private_key: ((github.private_key))
+    uri: git@github.com:springernature/accessibility-guide.git
+- name: slack-notification
+  type: slack-notification
+  source:
+    url: https://hooks.slack.com/services/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
+- name: CF dev frontenddevs dev
+  type: cf-resource
+  source:
+    api: ((cloudfoundry.api-dev))
+    org: frontenddevs
+    password: ((cloudfoundry.password))
+    space: dev
+    username: ((cloudfoundry.username))
+- name: CF live frontenddevs live
+  type: cf-resource
+  source:
+    api: ((cloudfoundry.api-live))
+    org: frontenddevs
+    password: ((cloudfoundry.password))
+    space: live
+    username: ((cloudfoundry.username))
+resource_types:
+- name: slack-notification
+  type: registry-image
+  source:
+    repository: cfcommunity/slack-notification-resource
+    tag: v1.4.2
+- name: cf-resource
+  type: registry-image
+  source:
+    password: ((gcr.private_key))
+    repository: eu.gcr.io/halfpipe-io/cf-resource
+    tag: stable
+    username: _json_key
+jobs:
+- name: deploy to dev
+  serial: true
+  plan:
+  - aggregate:
+    - get: git
+      trigger: true
+    timeout: 1h
+  - put: cf halfpipe-push
+    resource: CF dev frontenddevs dev
+    params:
+      appPath: git
+      command: halfpipe-push
+      gitRefPath: git/.git/ref
+      manifestPath: git/manifest-dev.yml
+      testDomain: dev.cf.private.springer.com
+      timeout: 1h
+    timeout: 1h
+    attempts: 2
+  - put: cf halfpipe-promote
+    resource: CF dev frontenddevs dev
+    params:
+      command: halfpipe-promote
+      manifestPath: git/manifest-dev.yml
+      testDomain: dev.cf.private.springer.com
+      timeout: 1h
+    timeout: 1h
+    attempts: 2
+  on_failure:
+    aggregate:
+    - put: slack-notification
+      params:
+        channel: '#frontend-alerts'
+        icon_url: https://concourse.halfpipe.io/public/images/favicon-failed.png
+        text: The pipeline `$BUILD_PIPELINE_NAME` failed at `$BUILD_JOB_NAME`. <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME>
+        username: Halfpipe
+  ensure:
+    put: cf halfpipe-cleanup
+    resource: CF dev frontenddevs dev
+    params:
+      command: halfpipe-cleanup
+      manifestPath: git/manifest-dev.yml
+      timeout: 1h
+    timeout: 1h
+    attempts: 2
+- name: deploy to live
+  serial: true
+  plan:
+  - aggregate:
+    - get: git
+      passed:
+      - deploy to dev
+      trigger: true
+    timeout: 1h
+  - put: cf halfpipe-push
+    resource: CF live frontenddevs live
+    params:
+      appPath: git
+      command: halfpipe-push
+      gitRefPath: git/.git/ref
+      manifestPath: git/manifest-live.yml
+      testDomain: live.cf.private.springer.com
+      timeout: 1h
+    timeout: 1h
+    attempts: 2
+  - put: cf halfpipe-promote
+    resource: CF live frontenddevs live
+    params:
+      command: halfpipe-promote
+      manifestPath: git/manifest-live.yml
+      testDomain: live.cf.private.springer.com
+      timeout: 1h
+    timeout: 1h
+    attempts: 2
+  on_failure:
+    aggregate:
+    - put: slack-notification
+      params:
+        channel: '#frontend-alerts'
+        icon_url: https://concourse.halfpipe.io/public/images/favicon-failed.png
+        text: The pipeline `$BUILD_PIPELINE_NAME` failed at `$BUILD_JOB_NAME`. <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME>
+        username: Halfpipe
+  ensure:
+    put: cf halfpipe-cleanup
+    resource: CF live frontenddevs live
+    params:
+      command: halfpipe-cleanup
+      manifestPath: git/manifest-live.yml
+      timeout: 1h
+    timeout: 1h
+    attempts: 2
+
