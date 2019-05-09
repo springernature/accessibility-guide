@@ -6,4 +6,4 @@ applications:
   routes:
   - route: accessibility-guidelines.live.public.springernature.io
   buildpacks:
-  - staticfile_buildpack
+    - staticfile_buildpack

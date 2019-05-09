@@ -7,3 +7,4 @@ applications:
   - route: accessibility-guidelines.dev.private.springernature.io
   buildpacks:
     - staticfile_buildpack
+  command: 
