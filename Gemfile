@@ -40,7 +40,8 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - Staticfile
-  - manifest.yml
+  - manifest-dev.yml
+  - manifest-live.yml
   - nginx
   - LICENSE
   - README.md
