@@ -1,9 +1,0 @@
----
-applications:
-- name: accessibility-guidelines
-  memory: 256MB
-  instances: 1  
-  routes:
-  - route: accessibility-guidelines.dev.private.springernature.io
-  buildpacks:
-    - staticfile_buildpack
