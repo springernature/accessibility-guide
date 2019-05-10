@@ -2,7 +2,7 @@
 layout: default
 title:  "Accessiblity at Springer Nature"
 categories: Accessibility
-permalink: accessibility-at-springer-nature
+permalink: accessibility-at-springer-nature/
 ---
 
 # Accessibility style guide

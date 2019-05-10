@@ -2,7 +2,7 @@
 layout: default
 title:  "Effective colour contrast"
 categories: Accessibility
-permalink: effective-colour-contrast
+permalink: effective-colour-contrast/
 ---
 
 # Effective colour contrast
