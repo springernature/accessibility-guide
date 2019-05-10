@@ -4,6 +4,7 @@ applications:
   memory: 256MB
   instances: 1  
   routes:
+  path: ./_site
   - route: accessibility-guidelines.dev.private.springernature.io
   buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
-  command: bundle exec jekyll serve 
+  command: bundle exec jekyll build 
