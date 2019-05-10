@@ -19,7 +19,16 @@
 		<div class="grid">		
 			<div id="site-nav" class="c-sidebar c-sidebar--sticky c-collapse-at-lt-md">
 				<nav>		
-			
+					<h2>Contents</h2>
+					<ul>
+						{% for guideline in site.guidelines %}
+			      			<li>
+			      				<a href="{{ guideline.url }}">
+									{{ guideline.title }}
+					    		</a>
+					    	</li>	
+						{% endfor %}
+					</ul>
 				</nav>
 			</div>
 		    <div class="main">

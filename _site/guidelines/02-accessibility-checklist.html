@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link id="mustardcut" rel="stylesheet" href="/css/main.css" media="only screen,
+	    only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+	    min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0)">
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">
+		<title>Accessiblity checklist</title>
+	</head>
+	<body class="">		
+		<header class="c-navbar">
+			<a class="c-logo" href="/">
+				<img height="40" class="logo-springernature mt20" src="/images/accessibility-logo.svg" alt="Logo for the Springer Nature accessibility guidelines">
+			</a>
+		</header>							
+		<div class="grid">		
+			<div id="site-nav" class="c-sidebar c-sidebar--sticky c-collapse-at-lt-md">
+				<nav>		
+					<h2>Contents</h2>
+					<ul>
+						
+			      			<li>
+			      				<a href="/guidelines/01-accessibility-at-springer-nature.html">
+									Accessiblity at Springer Nature
+					    		</a>
+					    	</li>	
+						
+			      			<li>
+			      				<a href="/guidelines/02-accessibility-checklist.html">
+									Accessiblity checklist
+					    		</a>
+					    	</li>	
+						
+			      			<li>
+			      				<a href="/guidelines/03-effective-colour-contrast.html">
+									Effective colour contrast
+					    		</a>
+					    	</li>	
+						
+					</ul>
+				</nav>
+			</div>
+		    <div class="main">
+		    	<h1 id="a-simple-accessibility-checklist">A simple accessibility checklist</h1>
+
+<p>This checklist aims to help you and your team create accessible products. It’s heavily inspired by Vox Media’s <a href="http://accessibility.voxmedia.com/">Accessibility Guidelines</a>.</p>
+
+<ul>
+  <li><a href="#semantics-and-structure">Semantics and structure</a></li>
+  <li><a href="#media">Media</a></li>
+  <li><a href="#colours">Colours</a></li>
+  <li><a href="#interactivity">Interactivity</a></li>
+  <li><a href="#content">Content</a></li>
+</ul>
+
+<h2 id="semantics-and-structure">Semantics and structure</h2>
+
+<h3 id="use-the-correct-html-element">Use the correct HTML element</h3>
+
+<p>Browsers build the <a href="https://developer.paciellogroup.com/blog/2015/01/the-browser-accessibility-tree/">accessibility tree</a> by making assumptions about page elements and the sort of content they are likely to contain.</p>
+
+<p>Using the correct HTML elements helps the browser make sense of your page, and helps assistive technology users navigate it more easily.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://webaim.org/techniques/semanticstructure/">Article: Semantic structure</a></li>
+</ul>
+
+<h3 id="use-html-landmarks">Use HTML landmarks</h3>
+
+<p>Assistive technology may make use of ARIA landmark roles or HTML5 landmark elements for navigation. These allow users to quickly jump between page sections.</p>
+
+<p>There are 8 landmark roles. Most browsers implicitly detect these roles if you use the correct HTML5 semantic element, but you may need to add the appropriate ARIA <code class="highlighter-rouge">role=</code> if you have to support an <a href="http://www.html5accessibility.com/#sections">older browser</a>.</p>
+
+<p>If you use more than one landmark of the same type, give each landmark a unique label so that screen reader users can tell them apart easily.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="http://alistapart.com/column/wai-finding-with-aria-landmark-roles">Article: WAI finding with ARIA landmark roles</a></li>
+  <li><a href="https://www.w3.org/WAI/tutorials/page-structure/labels/">Article: Labeling Regions</a></li>
+  <li><a href="https://www.youtube.com/watch?v=IhWMou12_Vk&amp;feature=youtu.be">Video: How ARIA landmark roles help screen reader users</a></li>
+  <li><a href="http://matatk.agrip.org.uk/landmarks/">Tool: Landmarks extension for Chrome, Firefox and Opera</a></li>
+  <li><a href="http://www.html5accessibility.com/#sections">Tool: HTML5 accessibility feature support for sections</a></li>
+</ul>
+
+<h3 id="declare-a-language-attribute">Declare a language attribute</h3>
+
+<p>Declaring a language attribute on the HTML element allows a screen reader to read out text with correct pronunciation. It also helps search engines return language-specific results.</p>
+
+<p>If you include text on a page that uses a different language to the main document (e.g. your HTML lang is <code class="highlighter-rouge">en</code> and you are including a passage in <code class="highlighter-rouge">jp</code>), also identify that text with its own lang attribute.</p>
+
+<p>We do this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;This document has the lang="en" attribute, and this text matches the document language.&lt;/p&gt;
+&lt;p lang="jp"&gt;このテキストは日本語です&lt;/p&gt;
+</code></pre></div></div>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://developer.paciellogroup.com/blog/2016/06/using-the-html-lang-attribute/">Article: Using the HTML lang attribute</a></li>
+  <li><a href="http://www.wcagsamurai.org/erratas/errata-listing/#GL4">Samurai errata GL4: Clarify natural-language usage</a></li>
+</ul>
+
+<h3 id="use-a-logical-source-order">Use a logical source order</h3>
+
+<p>Your page should still make sense when you look at it without CSS. This is a core <a href="../practices/progressive-enhancement.md">progressive enhancement technique</a>.</p>
+
+<p>Don’t surprise users by using CSS to make changes to apparent source order, e.g. by using floats and absolutely-positioned elements.</p>
+
+<p>Flexbox and CSS grids are particularly vulnerable to apparent source order surprises, and you should take extra care when using them.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="http://www.bettertesting.co.uk/content/?p=1619">Article: Logical document structures</a></li>
+  <li><a href="http://adrianroselli.com/2015/09/source-order-matters.html">Article: Source order matters</a></li>
+  <li><a href="https://wave.webaim.org/extension/">Tool: Wave Extension</a></li>
+</ul>
+
+<h3 id="use-headings-correctly">Use headings correctly</h3>
+
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines">HTML5 outline algorithm</a> can’t yet be relied on to convey information to users. Freely use HTML5 sectioning elements, but use headings to define the structure of your document. See our <a href="https://github.com/springernature/frontend-playbook/blob/master/markup/house-style.md#follow-the-html-4-outline-model-for-heading-levels">HTML markup house style</a> for more information.</p>
+
+<p>Use an appropriate heading for each section. You can visually hide headings, but make sure they’re still accessible to screen reader users.</p>
+
+<p>Don’t skip heading levels.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://hiddedevries.nl/en/blog/2018-09-01-heading-structures-are-tables-of-contents">Article: Heading structures are tables of contents</a></li>
+  <li><a href="https://webaim.org/techniques/semanticstructure/">Article: Semantic Structure</a></li>
+</ul>
+
+<h3 id="use-progressive-enhancement">Use progressive enhancement</h3>
+
+<p>Progressive enhancement means starting with a logical and semantic HTML document with all key functionality, then enhancing it with an aesthetic layer (CSS) and behavioural layer (JavaScript). It has benefits beyond accessibility but is a key starting point for creating accessible experiences.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="../practices/progressive-enhancement.md">Playbook: Progressive enhancement</a></li>
+</ul>
+
+<h2 id="media">Media</h2>
+
+<h3 id="audio-or-video-elements-must-be-accessible">Audio or video elements must be accessible</h3>
+
+<p>This could involve adding <a href="https://www.youtube.com/watch?v=5AXApBbj1ps">captions to videos</a>, providing <a href="https://www.nature.com/nature/podcast/v546/n7658/nature-2017-06-15.html">transcripts of audio content</a>, including audio description on videos, or including a text alternative for videos that have no audio track.</p>
+
+<p>Automatic captions (e.g. those provided by YouTube) are insufficient for accessibility compliance.</p>
+
+<h3 id="provide-text-alternatives-for-images">Provide text alternatives for images</h3>
+
+<p>Alt attributes should describe the image they’re applied to. E.g. the alt attribute for a photograph should describe what’s happening in the photograph, not just say “photograph”.</p>
+
+<p>Screen reader users prefer alt text to be short and informative. Avoid redundant phrases like “image of…”, and try to keep the total text under 125 characters. Don’t use the <code class="highlighter-rouge">longdesc</code> element for longer descriptions - its browser support is patchy and there are better-supported alternatives.</p>
+
+<p>If an image provides no information, is purely decorative, and can’t be moved from HTML into CSS, an empty alt attribute (<code class="highlighter-rouge">alt=""</code>) is preferred.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://www.deque.com/blog/great-alt-text-introduction/">Article: How to Design Great Alt Text</a></li>
+  <li><a href="https://webaim.org/techniques/alttext/">Article: Alternative Text</a></li>
+  <li><a href="https://www.washington.edu/accessit/print.html?ID=1257">Article: How long can an “alt” attribute be?</a></li>
+  <li><a href="https://cookiecrook.com/longdesc/">Article: Longdesc alternatives in HTML5</a></li>
+</ul>
+
+<h2 id="colours">Colours</h2>
+
+<h3 id="use-adequate-colour-contrast">Use adequate colour contrast</h3>
+
+<p>Text and images of text must have a colour contrast ratio of at least 4.5:1.</p>
+
+<p>Don’t use confusable colours. Make sure your choices can be perceived by people with colour blindness.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://accessibility.blog.gov.uk/2016/06/17/colour-contrast-why-does-it-matter/">Article: Colour contrast - why does it matter?</a></li>
+  <li><a href="https://webaim.org/resources/contrastchecker/">Tool: Color Contrast Checker</a></li>
+  <li><a href="http://www.funkify.org/">Tool: Funkify</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/visbug/cdockenadnadldjbbgcallicgledbeoc">Tool: Visbug extension for Chrome</a></li>
+</ul>
+
+<h3 id="dont-convey-information-with-colour-alone">Don’t convey information with colour alone</h3>
+
+<p>Use text equivalents or semantic emphasis like <code class="highlighter-rouge">&lt;strong&gt;</code> or <code class="highlighter-rouge">&lt;em&gt;</code> when conveying important information to users.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="http://universalusability.com/access_by_design/color/alone.html">Article: Don’t use color alone to convey meaning</a></li>
+</ul>
+
+<h2 id="interactivity">Interactivity</h2>
+
+<h3 id="give-enough-time-to-read-and-use-content">Give enough time to read and use content</h3>
+
+<p>Let the user pause, stop, or hide content that moves, blinks, scrolls, or automatically updates.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://www.w3.org/WAI/intro/people-use-web/principles#time">Case studies: How People with Disabilities Use the Web</a></li>
+</ul>
+
+<h3 id="design-for-device-independence">Design for device independence</h3>
+
+<p>Make sure users can interact with your page using the keyboard alone.</p>
+
+<p>Don’t rely on device-dependent event handlers (e.g. <code class="highlighter-rouge">onhover</code>) as the sole method to convey information or to complete tasks.</p>
+
+<p>Make sure interactable elements are large enough for touchscreen users to easily access controls. Leave enough space around controls so that they don’t overlap with other touch targets.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://www.lukew.com/ff/entry.asp?1085">Article: Touch Target Sizes</a></li>
+</ul>
+
+<h3 id="give-context-and-orientation-information">Give context and orientation information</h3>
+
+<p>Associate all form controls with appropriate labels. Use fieldsets or optgroups to group related controls.</p>
+
+<p>Give users a way to know where they are in a set of related pages (e.g. the <a href="http://ui-patterns.com/patterns/StepsLeft">Steps Left pattern</a>).</p>
+
+<p>Make sure the currently-focused element has a focus ring, and make sure the focus sequence is logical.</p>
+
+<h3 id="avoid-opening-links-in-new-windows">Avoid opening links in new windows</h3>
+
+<p>This can be disorientating to screen reader users or users with cognitive disabilites.</p>
+
+<p>If you must do it, warn the user <em>before</em> they click on the link that it’ll open in a new window. You can use text like “opens in a new window” or a visual icon. If you choose to use an icon, make sure it’s accessible to screen reader users.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://www.nomensa.com/blog/2011/opening-links-new-window">Article: Opening links in a new window</a></li>
+</ul>
+
+<h3 id="dont-use-html5-input-placeholders-for-important-information">Don’t use HTML5 input placeholders for important information</h3>
+
+<p>Input placeholders disappear when the user begins typing, may be mistaken for a value, and may not provide adequate context.</p>
+
+<p>Never put user instructions in input placeholders - always use a label.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://developer.paciellogroup.com/blog/2011/02/html5-accessibility-chops-the-placeholder-attribute/">Article: HTML5 Accessibility Chops: the placeholder attribute</a></li>
+  <li><a href="https://medium.com/simple-human/10-reasons-why-placeholders-are-problematic-f8079412b960">Article: 11 reasons why placeholders are problematic</a></li>
+  <li><a href="https://www.smashingmagazine.com/2018/06/placeholder-attribute">Article: Don’t Use The Placeholder Attribute</a></li>
+</ul>
+
+<h2 id="content">Content</h2>
+
+<h3 id="use-link-text-that-makes-sense-out-of-context">Use link text that makes sense out of context</h3>
+
+<p>Screen reader users may navigate a page by links alone. Avoid link text that says “click here”, or context-free text like “More details” repeatedly applied to a list of links.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://www.nomensa.com/blog/2011/writing-good-link-text">Article: Writing good link text</a></li>
+</ul>
+
+<h3 id="use-tables-appropriately">Use tables appropriately</h3>
+
+<p>Don’t use tables for layout. If a data table lacks important characteristics like <code class="highlighter-rouge">&lt;th&gt;</code> elements, some assistive technology may treat it as though it’s a layout table and read its contents linearly. This can make it much more difficult for a screen reader user to understand.</p>
+
+<p>Resources:</p>
+
+<ul>
+  <li><a href="https://webaim.org/techniques/tables/">Article: Creating Accessible Tables</a></li>
+</ul>
+
+			
+			</div>
+			<div class="c-sn-footer c-sn-footer--neutral">
+			    <div class="u-container">
+			        <img src="/images/accessibility-logo.svg" class="c-sn-footer__logo" height="40" alt="Springer Nature Logo" itemprop="logo">
+			        <p data-test="copyright">© 2019 <a href="http://www.springernature.com" data-track="click" data-track-action="Click Springer Nature link" data-track-category="Corporate footer" itemscope="" itemtype="http://schema.org/Organization" itemid="#parentOrganization">Springer Nature</a> unless otherwise stated.           
+			        </p>			      
+			    </div>
+			</div>		
+		</div>
+	</body>
+</html>

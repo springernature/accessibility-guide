@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link id="mustardcut" rel="stylesheet" href="/css/main.css" media="only screen,
+	    only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+	    min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0)">
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">
+		<title>Accessiblity at Springer Nature</title>
+	</head>
+	<body class="">		
+		<header class="c-navbar">
+			<a class="c-logo" href="/">
+				<img height="40" class="logo-springernature mt20" src="/images/accessibility-logo.svg" alt="Logo for the Springer Nature accessibility guidelines">
+			</a>
+		</header>							
+		<div class="grid">		
+			<div id="site-nav" class="c-sidebar c-sidebar--sticky c-collapse-at-lt-md">
+				<nav>		
+					<h2>Contents</h2>
+					<ul>
+						
+			      			<li>
+			      				<a href="/guidelines/01-accessibility-at-springer-nature.html">
+									Accessiblity at Springer Nature
+					    		</a>
+					    	</li>	
+						
+			      			<li>
+			      				<a href="/guidelines/02-accessibility-checklist.html">
+									Accessiblity checklist
+					    		</a>
+					    	</li>	
+						
+			      			<li>
+			      				<a href="/guidelines/03-effective-colour-contrast.html">
+									Effective colour contrast
+					    		</a>
+					    	</li>	
+						
+					</ul>
+				</nav>
+			</div>
+		    <div class="main">
+		    	<h1 id="accessibility-style-guide">Accessibility style guide</h1>
+
+<ul>
+  <li><a href="#general-principles">General Principles</a>
+    <ul>
+      <li><a href="#what-is-accessibility">What is accessibility?</a></li>
+      <li><a href="#why-do-we-care-about-accessibility">Why do we care about accessibility?</a></li>
+    </ul>
+  </li>
+  <li><a href="#vpats">VPATs</a></li>
+  <li><a href="#how-we-conform">How we conform</a>
+    <ul>
+      <li><a href="#standards-we-conform-to">Standards</a></li>
+      <li><a href="#tools-and-techniques">Tools and techniques</a>
+        <ul>
+          <li><a href="#guidelines">Guidelines</a></li>
+          <li><a href="#pa11y">Pa11y</a></li>
+          <li><a href="#other-accessibility-testing-tools">Other accessibility testing tools</a></li>
+          <li><a href="#assistive-technology">Assistive technology</a></li>
+          <li><a href="#testing-with-real-users">Testing with real users</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="general-principles">General principles</h2>
+
+<blockquote>
+  <p>The power of the Web is in its universality.
+Access by everyone regardless of disability is an essential aspect.</p>
+
+  <p><em>Tim Berners-Lee, inventor of the World Wide Web</em></p>
+</blockquote>
+
+<h3 id="what-is-accessibility">What is accessibility?</h3>
+
+<p>The Web is fundamentally designed to work for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. When the Web meets this goal, it is accessible to people with a diverse range of hearing, movement, sight, and cognitive ability.</p>
+
+<p>Thus the impact of disability is radically changed on the Web because the Web removes barriers to communication and interaction that many people face in the physical world. However, when websites, web technologies, or web tools are badly designed, they can create barriers that exclude people from using the Web.</p>
+
+<p>It is essential that the Web be accessible in order to provide equal access and equal opportunity to people with diverse abilities. Indeed, the <a href="https://www.un.org/development/desa/disabilities/">UN Convention on the Rights of Persons with Disabilities</a> recognises access to information and communications technologies, including the Web, as a basic human right.</p>
+
+<p>Accessibility supports social inclusion for people with disabilities as well as others, such as older people, people in rural areas, and people in developing countries.</p>
+
+<h3 id="why-do-we-care-about-accessibility">Why do we care about accessibility?</h3>
+
+<ul>
+  <li><em>It’s a legal requirement:</em> we’re legally obliged to make our content accessible to users with diverse needs. All of our websites MUST comply with <a href="https://www.section508.gov/">US Section 508</a> of the US Rehabilitation Act 1973, <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016L2102">EU Directive 2016/2102</a> and the <a href="http://www.legislation.gov.uk/ukpga/2010/15/contents">UK Equality Act 2010</a>. From January 18th 2018, compliance with Section 508 requires us to comply with WCAG 2.0 AA. We expect this to be updated to WCAG 2.1 AA in due course.</li>
+  <li><em>It makes financial sense:</em> around 20% of working age adults in the UK are estimated to have some kind of permanent disability (Source: <a href="https://www.scope.org.uk/media/disability-facts-figures">Scope UK</a>). Forrester Research found that <em>_57%_</em> of computer users aged 18 to 64 have disabilites that make them “likely or very likely” to benefit from the use of assistive technology (Source: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2788505/">Pubmed</a>). Also taking into account people who are <a href="https://userway.org/blog/how-situational-disabilities-impact-us-all">temporarily disabled</a>, failing to make our websites accessible can cause a significant reduction in real market share.</li>
+  <li><em>It’s a technical requirement:</em> catering for all users complements our <a href="../practices/graded-browser-support.md">browser support policy</a> (we aim to support all browsers), and our use of <a href="../practices/progressive-enhancement.md">progressive enhancement</a>.</li>
+  <li><em>It’s the right thing to do:</em> we have a duty to cater for all users regardless of ability. If we know that people can encounter difficulties accessing our content (which we do), and we know that we can do things to facilitate that access (which we do), then not making something accessible is knowingly contributing to the oppression of people with disabilities.</li>
+</ul>
+
+<p>Accessible sites can be used by more people - including people with disabilities, people using mobile devices, older people, people with low literacy, people who are not fluent in the language of the site, people with low bandwidth connections to the Internet, people with older technologies, and new and infrequent web users.</p>
+
+<p><img src="images/microsoft-accessibility.jpg" alt="Microsoft illustration of how designing for permanent disabilities helps many people facing temporary or situational disability" /></p>
+
+<p>(image © Microsoft)</p>
+
+<h2 id="vpats">VPATs</h2>
+
+<p>A Voluntary Product Accessibility Template (VPAT) is a document that explains how accessible a particular product is <a href="https://www.section508.gov/content/sell/vpat">according to the Section 508 Standards</a>. Our customers in the United States use our VPATs to show that they comply with U.S. accessibility law.</p>
+
+<p>A VPAT MUST be produced by you or your team for every product or service that we make commercially available in the United States. If something changes, e.g. accessibility is improved for a particular criteria, you MUST update the VPAT to reflect the change. You MUST NOT regress accessibility to below the level detailed in the VPAT.</p>
+
+<p>You may use <a href="https://github.com/springernature/vpat">our VPAT template</a> when evaluating your own products.</p>
+
+<h2 id="how-we-conform">How we conform</h2>
+
+<h3 id="standards-we-conform-to">Standards we conform to</h3>
+
+<p>Our target standards are <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> level AA.</p>
+
+<p>As of mid-September 2018, WCAG 2.1 AA has been adopted in the European <a href="https://www.w3.org/blog/2018/09/wcag-2-1-adoption-in-europe/">EN 301 549 “Accessibility requirements for ICT products and services”</a>. This means that in order to comply with EN 301 549, your products MUST also comply with WCAG 2.1 to level AA.</p>
+
+<p>As of January 18th 2018, WCAG 2.0 AA (the previous candidate recommendation) was incorporated by reference into Section 508 (see <a href="https://www.paciellogroup.com/blog/2017/01/section-508-refresh-part-1/">Section 508 Refresh Part 1</a> by the Paciello Group).</p>
+
+<p>Our expectation is that Section 508 will be updated to reference WCAG 2.1 in due course. Comply with WCAG 2.1 now to avoid retrofitting repairs later!</p>
+
+<h3 id="tools-and-techniques">Tools and techniques</h3>
+
+<h4 id="guidelines">Guidelines</h4>
+
+<p>You are expected to be aware of the Web Content Accessibility Guidelines and to adhere to their recommendations. You are also expected to understand the foundational four principles of accessibility (Perceivable, Operable, Understandable, Robust) and to be able to apply them in your work. Be alert to the possibility of regressions that cannot be detected by software.</p>
+
+<p>The companion document <a href="https://www.w3.org/WAI/WCAG21/Understanding/">Understanding WCAG 2.1</a> (Editor’s Draft) explains what each of the success criterion in WCAG 2.1 actually means. You might also find the <a href="https://www.w3.org/WAI/WCAG21/Techniques/">Techniques for WCAG 2.1</a> (Editor’s Draft) useful when building features.</p>
+
+<p>W3C WAI have published a <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0">quick reference document for WCAG</a>. It describes the WCAG success criteria and shows techniques and failures for each. We’ve also created <a href="accessibility-checklist.md">a simple accessibility checklist</a>, to help you become familiar with the guidelines/standards, and to aid you when manually assessing pages.</p>
+
+<p>Use <a href="https://www.w3.org/TR/wai-aria/">WAI-ARIA</a> roles and properties in your code where they help to improve accessibility of your interfaces but you SHOULD NOT:</p>
+<ul>
+  <li>Use ARIA techniques as a way of compensating for the abuse of semantics (e.g. do not apply <code class="highlighter-rouge">role="link"</code> to a <code class="highlighter-rouge">div</code> element, instead of using <code class="highlighter-rouge">a</code>, etc.);</li>
+  <li>Use ARIA roles, properties, or design patterns without understanding what they do;</li>
+  <li>Use ARIA roles, properties, or design patterns without testing them with assistive technologies.</li>
+</ul>
+
+<p>The W3C <a href="https://www.w3.org/TR/using-aria/#NOTES">Using ARIA</a> working draft explains why you shouldn’t do those things. Familiarise yourself in particular with the First and Second Rules of ARIA!</p>
+
+<h4 id="pa11y">Pa11y</h4>
+
+<p>We use <a href="http://pa11y.org/">Pa11y</a> to perform automated accessibility testing. Projects MUST have Pa11y integrated at the build stage, and builds MUST fail if errors are introduced. You MUST NOT allow accessibility regressions to enter your project’s codebase.</p>
+
+<p>Mature projects using Pa11y for the first time MAY use the <code class="highlighter-rouge">threshold</code> flag to specify a baseline number of errors to allow through, but MUST aim to reduce that threshold to zero at the earliest opportunity. <a href="https://www.youtube.com/watch?v=H4FzW9oFObs">Watch this talk by Laura Carvajal of the Financial Times</a> to get a high level overview of the concept.</p>
+
+<p>Read <a href="http://cruft.io/posts/automated-accessibility-testing-node-travis-ci-pa11y/">Automated accessibility testing with Travis CI</a> to see how to integrate Pa11y with your build process. If you’re not using Travis, adjust the setup for the software that you are using.</p>
+
+<p><em>Caveat:</em> it’s possible to build a site that passes Pa11y’s testing with flying colours, but is still completely inaccessible for real users. You MUST NOT rely on Pa11y as your sole safeguard for accessibility testing.</p>
+
+<h4 id="other-accessibility-testing-tools">Other accessibility testing tools</h4>
+
+<ul>
+  <li>Pa11y is based on HTMLCodesniffer by Squizlabs. They also have a <a href="https://squizlabs.github.io/HTML_CodeSniffer/">bookmarklet</a> for quick tests.</li>
+  <li>The Axe engine comes as a <a href="https://www.deque.com/axe/">browser extension</a> and as an <a href="https://github.com/dequelabs/axe-core">NPM module</a> that you can integrate with your build, like Pa11y.</li>
+  <li>Google’s <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> audits accessibility as well as other metrics (e.g. performance) and is available as an extension, in the Chrome dev console, or as a Node CLI tool.</li>
+  <li>WebAim’s <a href="https://wave.webaim.org/extension/">WAVE extension</a> for Chrome and Firefox evaluates accessibility in place on the page.</li>
+  <li>Check colour contrast compliance with WebAim’s <a href="https://webaim.org/resources/contrastchecker/">Colour Contrast Checker</a>.</li>
+  <li>The <a href="http://matatk.agrip.org.uk/landmarks/">Landmarks browser extension</a> (for Firefox, Chrome and Opera) enables navigation of WAI-ARIA landmarks, via the keyboard or a pop-up menu.</li>
+  <li><a href="http://www.funkify.org/">Funkify</a> is an extension for Chrome that helps you experience the web and interfaces through the eyes of users with different abilities and disabilities.</li>
+</ul>
+
+<p><em>Caveat:</em> None of these tools on their own will catch every error. Even by combining all of them, it’s still possible to produce an inaccessible webpage. Terrill Thompson <a href="http://terrillthompson.com/blog/730">compared several of the most popular tools</a> which should give you some idea of the scale of the problem. The Government Digital Service also <a href="https://accessibility.blog.gov.uk/2017/02/24/what-we-found-when-we-tested-tools-on-the-worlds-least-accessible-webpage/">conducted their own tool audit</a>.</p>
+
+<p>You MUST NOT rely on accessibility tools as your sole safeguard for accessibility testing.</p>
+
+<h4 id="assistive-technology">Assistive technology</h4>
+
+<p>You’re encouraged to test your pages with assistive technology (AT). Many operating systems include some AT as standard, including screenreaders, magnifiers, or input remapping.</p>
+
+<p>In OSX you can enable <a href="https://help.apple.com/voiceover/info/guide/10.12/#/">VoiceOver</a> in System Preferences &gt; Accessibility. You may also find navigating without an input device using <a href="https://support.apple.com/en-us/HT202584">Dictation</a> instructive. Ensure your interfaces work with keyboard navigation.</p>
+
+<p><em>Caveat:</em> unless you’re familiar with using AT, your experience won’t be comparable to that of a habitual AT user. Beware of making inferences about what’s “easier” for AT users based on your own preferences.</p>
+
+<h4 id="testing-with-real-users">Testing with real users</h4>
+
+<p>The best way to learn if your website works for people with disabilities is to get people with disabilities to test it for you.</p>
+
+<p>You can arrange your own user testing, but it’s better to engage a third party like the <a href="http://www.digitalaccessibilitycentre.org/">Digital Accessibility Centre</a> to do this work for you. As professionals who specialise in accessibility testing and making recommendations, they’re better at it than you.</p>
+
+<h4 id="resources">Resources</h4>
+
+<p>Udacity have published an <a href="https://www.udacity.com/course/web-accessibility--ud891">excellent free course on Web Accessibility</a> with Google engineers Alice Boxhall and Rob Dodson.</p>
+
+<p>The Financial Times have produced an <a href="https://ft-interactive.github.io/accessibility/index.html">accessibility tip sheet</a>.</p>
+
+<p>The Government Digital Service frequently publishes excellent resources. Some highlights are:</p>
+
+<ul>
+  <li><a href="https://gds.blog.gov.uk/2017/10/23/were-making-accessibility-clearer-and-easier/">We’re making accessibility clearer and easier</a></li>
+  <li><a href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction">Making your service accessible: an introduction</a></li>
+</ul>
+
+			
+			</div>
+			<div class="c-sn-footer c-sn-footer--neutral">
+			    <div class="u-container">
+			        <img src="/images/accessibility-logo.svg" class="c-sn-footer__logo" height="40" alt="Springer Nature Logo" itemprop="logo">
+			        <p data-test="copyright">© 2019 <a href="http://www.springernature.com" data-track="click" data-track-action="Click Springer Nature link" data-track-category="Corporate footer" itemscope="" itemtype="http://schema.org/Organization" itemid="#parentOrganization">Springer Nature</a> unless otherwise stated.           
+			        </p>			      
+			    </div>
+			</div>		
+		</div>
+	</body>
+</html>
