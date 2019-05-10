@@ -11,6 +11,8 @@ To build and serve locally: bundle exec jekyll serve
 
 New accessibility guide content is added in the guidelines folder using a numbering system for ordering, this gets around jekyll's need for a date when using 'posts'.
 
+Please add a permalink to the correct title removing the number from the start.
+
 The app is deployed using halfpipe to
 
 dev: http://accessibility-guidelines.dev.private.springernature.io/

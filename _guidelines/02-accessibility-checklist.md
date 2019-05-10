@@ -2,6 +2,7 @@
 layout: default
 title:  "Accessiblity checklist"
 categories: Accessibility
+permalink: accessibility-checklist
 ---
 
 # A simple accessibility checklist
