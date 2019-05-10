@@ -7,6 +7,8 @@ permalink: accessibility-at-springer-nature/
 
 # Accessibility style guide
 
+TESTING
+
 - [General Principles](#general-principles)
   - [What is accessibility?](#what-is-accessibility)
   - [Why do we care about accessibility?](#why-do-we-care-about-accessibility)
@@ -20,7 +22,7 @@ permalink: accessibility-at-springer-nature/
     - [Assistive technology](#assistive-technology)
     - [Testing with real users](#testing-with-real-users)
     - [Resources](#resources)
-
+  
 
 ## General principles
 
