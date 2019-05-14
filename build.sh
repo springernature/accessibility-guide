@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo
+set -euo LANG=C.UTF-8
 
 gem install jekyll bundler
 bundle install
