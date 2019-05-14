@@ -1,6 +1,5 @@
 team: frontenddevs
 pipeline: accessibility-guidelines
-slack_channel: "#frontend-alerts"
 
 tasks:
 - type: deploy-cf
