@@ -49,3 +49,4 @@ exclude:
   - manifest-live.yml
   - pipeline.yml
   - Staticfile
+  - build.sh

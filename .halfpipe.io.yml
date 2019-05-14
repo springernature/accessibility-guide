@@ -2,14 +2,23 @@ team: frontenddevs
 pipeline: accessibility-guidelines
 
 tasks:
+
+- type: run
+  name: build
+  script: build.sh
+  docker:
+    image: ruby:2.6.3
+  save_artifacts:
+  - ./_site
+
 - type: deploy-cf
-  name: deploy to dev
+  name: deploy-to-dev
   api: ((cloudfoundry.api-dev))
   space: dev
   manifest: manifest-dev.yml
 
 - type: deploy-cf
-  name: deploy to live
+  name: deploy-to-live
   api: ((cloudfoundry.api-live))
   space: live
   manifest: manifest-live.yml

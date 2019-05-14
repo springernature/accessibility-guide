@@ -4,6 +4,7 @@ applications:
   memory: 256MB
   instances: 1  
   routes:
-  - route: accessibility-guidelines.dev.private.springernature.io
-  buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
+    - route: accessibility-guidelines.dev.private.springernature.io
+  buildpacks:
+    - staticfile_buildpack
   
