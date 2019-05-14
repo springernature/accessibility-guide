@@ -1,7 +1,7 @@
 #!/bin/bash
 
-LANG="en_US.UTF-8"
-LANGUAGE="en_US:en"
+export LANG="C.UTF-8"
+export LC_ALL="C.UTF-8"
 
 set -euo
 
