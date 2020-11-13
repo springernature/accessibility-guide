@@ -4,6 +4,6 @@ applications:
   memory: 256MB
   instances: 1
   routes:
-    - route: accessibility-guidelines.live.public.springernature.io
+    - route: accessibility-guidelines.public.springernature.app
   buildpacks:
     - staticfile_buildpack
