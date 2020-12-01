@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link id="mustardcut" rel="stylesheet" href="/css/main.css" media="only screen,
+	    only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
+	    min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0)">
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">
+		<title>Developing accessible products</title>
+	</head>
+	<body class="">		
+		<header class="c-navbar">
+			<a class="c-logo" href="/">
+				<img height="40" class="logo-springernature mt20" src="/images/accessibility-logo.svg" alt="Logo for the Springer Nature accessibility guidelines">
+			</a>
+		</header>							
+		<div class="grid">		
+			<div id="site-nav" class="c-sidebar c-sidebar--sticky c-collapse-at-lt-md">
+				<nav>		
+					<h2>Contents</h2>
+					<ul>
+						
+			      			<li>
+			      				<a href="/developing-accessible-products/">
+									Developing accessible products
+					    		</a>
+					    	</li>	
+						
+			      			<li>
+			      				<a href="/accessibility-at-springer-nature/">
+									Accessiblity at Springer Nature
+					    		</a>
+					    	</li>	
+						
+			      			<li>
+			      				<a href="/accessibility-checklist/">
+									Accessiblity checklist
+					    		</a>
+					    	</li>	
+						
+			      			<li>
+			      				<a href="/effective-colour-contrast/">
+									Effective colour contrast
+					    		</a>
+					    	</li>	
+						
+					</ul>
+				</nav>
+			</div>
+		    <div class="main">
+		    	<h1 id="developing-accessible-products">Developing accessible products</h1>
+
+<p>Businesses with an online presence must ensure they make their offering accessible to disabled users. This is a legal obligation that we are required to meet in multiple countries and jurisdictions.</p>
+
+<p>Certain organisations such as scientific or educational institutions may be prevented by federal regulations from procuring products and services that do not meet accessibility requirements.</p>
+
+<p>Commercial products are generally covered under civil rights legislation such as the Americans with Disabilities Act in the US or the Equality Act in the UK. If a commercial website is found to be inaccessible, the website owner can be sued for discrimination under various civil rights legislatory mechanisms.</p>
+
+<h2 id="what-is-wcag">What is WCAG?</h2>
+
+<p><a href="https://www.w3.org/TR/WCAG21/">The Web Content Accessibility Guidelines (WCAG)</a> are a set of recommendations for making Web content more accessible to a wider range of people with disabilities. The guidelines address accessibility of web content on desktops, laptops, tablets, and mobile devices. Following these guidelines will also often make Web content more usable to users in general.</p>
+
+<p>Several legal jurisdictions, including those in the US and the EU, explicitly refer to WCAG as the standard to which website operators are expected to adhere.</p>
+
+<p>Our target standard is WCAG 2.1 AA, in line with the current EU legislation, EN 301 549. All first and third party web products and components published by Springer Nature must conform to WCAG 2.1 AA.</p>
+
+<h2 id="how-do-i-make-sure-my-product-complies">How do I make sure my product complies?</h2>
+
+<p>Accessibility should be considered at every stage of your design and build process, not scheduled as a single clean-up task at the end of the project. Retrofitting accessibility into an inaccessible product is difficult, expensive, and time-consuming.</p>
+
+<h3 id="accessible-design-patterns">Accessible design patterns</h3>
+
+<p>When creating interactive components, look for an accessible design pattern before trying to roll your own. There are many resources where you can get ideas:</p>
+
+<ul>
+  <li><a href="https://a11yproject.com/patterns">https://a11yproject.com/patterns</a></li>
+  <li><a href="https://www.w3.org/WAI/tutorials/">https://www.w3.org/WAI/tutorials/</a></li>
+  <li><a href="https://design-patterns.tink.uk/">https://design-patterns.tink.uk/</a></li>
+  <li><a href="https://inclusive-components.design/">https://inclusive-components.design/</a></li>
+  <li><a href="https://design-system.service.gov.uk/components/">https://design-system.service.gov.uk/components/</a></li>
+  <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex">https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex</a></li>
+</ul>
+
+<p>You should still be cautious when using these design patterns. A particular design pattern may be aspirational, and untested with a wide range of Assistive Technology. You must test any “accessible” component that you incorporate to make sure it lives up to its claims.</p>
+
+<p>Before handing off your product for review, you should do the following:</p>
+
+<h3 id="automated-testing">Automated testing</h3>
+
+<p>Automated accessibility testing can be used to detect the most common accessibility problems. This is only the first step in the process; you must not rely on automated testing as your sole method of verification. The GDS Accessibility team ran an experiment in 2017 to <a href="https://accessibility.blog.gov.uk/2017/02/24/what-we-found-when-we-tested-tools-on-the-worlds-least-accessible-webpage/">audit the performance of a large number of available automated accessibility testing tools</a>. They found that the highest number of errors that one tool was able to detect was 40%. The majority of the tools fell into the 20%-30% range.</p>
+
+<p>At Springer Nature, we use <a href="http://pa11y.org/">Pa11y</a> and <a href="https://www.deque.com/axe/">Axe</a>. Both of these tools can be installed as part of your Continuous Integration setup if you’re using one, or can otherwise be used on the command line. Axe can also be used in the browser.</p>
+
+<p>We expect your product to be free of errors when these two tools are passed over it. You’re welcome to use other automated accessibility testing tools in addition to these.</p>
+
+<h3 id="manual-testing">Manual testing</h3>
+
+<p>Manual accessibility testing fills in the gaps that automated tools miss.</p>
+
+<h4 id="guided-tests">Guided tests</h4>
+
+<p>As a first step for manual testing, we recommend using Microsoft’s <a href="https://accessibilityinsights.io/">free Accessibility Insights tool</a>, a browser extension for Chrome. Use the “Assessment” functionality provided to be guided through the process of assessing a webpage yourself. The “Fast Pass” function is included as part of the “Assessment” process.</p>
+
+<p>The Fast Pass functionality is based on Axe, but bear in mind that the bundled Axe version may not be in sync with the official package, and you may get inconsistent results if you rely on the version bundled by Microsoft.</p>
+
+<p>We expect your product to be free of errors that can be identified using this tool.</p>
+
+<h4 id="testing-with-a-screen-reader">Testing with a screen reader</h4>
+
+<p>The Accessibility Insights tool doesn’t cover screen reader testing. We do expect products to be usable in screen readers, so you should conduct your own testing with at least one of these.</p>
+
+<p>You will need to learn how to use a screen reader, but they are not complicated tools. They are consumer software products, designed to allow ordinary users to interact with websites without a visual display.</p>
+
+<p>If you don’t use a screen reader regularly, the way that you use it will be different to that of a habitual screen reader user, so be cautious in extrapolating your own experiences to those other users. But also bear in mind that not all regular screen reader users are experts or power users, just like not all users of web browsers are experts.</p>
+
+<p>If you’re a Mac user, VoiceOver is built-in to OSX and is a decent, basic screen reader. This guide from WebAIM <a href="https://webaim.org/articles/voiceover/">explains the basics of using VoiceOver to test pages</a>.</p>
+
+<p>If you’re a Windows user, NVDA is one of the more popular screen readers amongst blind users. This guide from WebAIM <a href="https://webaim.org/articles/nvda/">explains the basics of using NVDA to test pages</a>.</p>
+			
+			</div>
+			<div class="c-sn-footer c-sn-footer--neutral">
+			    <div class="u-container">
+			        <img src="/images/accessibility-logo.svg" class="c-sn-footer__logo" height="40" alt="Springer Nature Logo" itemprop="logo">
+			        <p data-test="copyright">© 2019 <a href="http://www.springernature.com" data-track="click" data-track-action="Click Springer Nature link" data-track-category="Corporate footer" itemscope="" itemtype="http://schema.org/Organization" itemid="#parentOrganization">Springer Nature</a> unless otherwise stated.           
+			        </p>			      
+			    </div>
+			</div>		
+		</div>
+	</body>
+</html>
